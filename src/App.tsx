@@ -3,9 +3,10 @@ import Home from "./pages/home/Home";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Produtos from "./pages/produtos/Produtos";
-import Categorias from "./pages/categorias/Categoria";
-import CadastrarProdutos from "./pages/cadastro/Cadastro";
-//import ListarCategorias from "./components/ListarCategorias";
+import CadastrarCategoria from "./pages/cadastro/Cadastro";
+import ListarCategorias from "./components/categorias/listacategoria/ListaCategoria";
+import DeletarCategoria from "./components/categorias/deletarcategoria/DeletarCategoria";
+import FormCategoria from "./components/categorias/formcategoria/FormCategoria";
 
 function App() {
   return (
@@ -16,9 +17,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/produtos" element={<Produtos />} />
-            <Route path="/categorias" element={<Categorias />} />
-            <Route path="/cadastrar-produtos" element={<CadastrarProdutos />} />
-            
+            <Route path="/categorias"  element={<ListarCategorias />} />
+            <Route path="/categorias/cadastrar" element={<CadastrarCategoria />} />
+            <Route path="/deletarcategoria/:id" element={<DeletarCategoria/>} />
+            <Route path="/editarcategoria/:id" element={<FormCategoria/>}/>
           </Routes>
         </div>
         <Footer />
